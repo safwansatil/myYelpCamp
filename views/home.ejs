@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>myYelpCamp</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa; /* Light gray background */
+        color: #343a40; /* Dark text color */
+        font-family: 'Poppins', sans-serif;
+      }
+      .navbar {
+        background-color: #212529;
+        border-bottom: 1px solid #e0e0e0;
+      }
+      .hero-section {
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+      }
+      .hero-image {
+        border-radius: 1rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+      .btn-custom {
+        background-color: #4caf50;
+        border-color: #4caf50;
+        color: white;
+        transition: transform 0.2s ease-in-out;
+      }
+      .btn-custom:hover {
+        background-color: #45a049;
+        border-color: #45a049;
+        transform: translateY(-2px);
+      }
+      .btn-custom:focus {
+        box-shadow: 0 0 0 0.25rem rgba(76, 175, 80, 0.25);
+      }
+      .footer {
+        background-color: #212529; /* Dark footer background */
+        border-top: 1px solid #e0e0e0;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="/">myYelpCamp</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/campgrounds">Campgrounds</a>
+            </li>
+            <% if(!currentUser) { %>
+            <li class="nav-item">
+              <a class="nav-link" href="/login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/register">Register</a>
+            </li>
+            <% } else { %>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container hero-section">
+      <div class="row align-items-center">
+        <div class="col-lg-6 text-center text-lg-start">
+          <h1 class="display-3 fw-bold">
+            Discover Your Next <br />Adventure
+          </h1>
+          <p class="lead text-muted my-4">
+            Explore and share the best campsites around the world. Find your
+            perfect spot, upload your photos, and connect with a community of
+            fellow campers.
+          </p>
+          <a href="/campgrounds" class="btn btn-lg btn-custom">
+            Explore Campgrounds
+          </a>
+        </div>
+        <div class="col-lg-6 text-center mt-5 mt-lg-0">
+          <img
+            src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=600&fit=crop"
+            class="img-fluid hero-image"
+            alt="A camping tent and fire pit"
+          />
+        </div>
+      </div>
+    </main>
+
+    <footer class="mt-auto py-4 text-center footer">
+      <p class="text-white-50 mb-0">&copy; 2025 YelpCamp</p>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
